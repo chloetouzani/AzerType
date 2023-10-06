@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    color: #F68E5F;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+}
+
+h1 {
+    color: #F76C5E;
+    font-size: 55px;
+    font-weight: 950;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 390PX;
+    width: 580px;
+    background-color: #F68E5F;
+    color: white;
+    border-radius: 40px;
+    padding: 30px;
+    font-weight: 100;
+}
+
+#given-word {
+    font-size: 33px;
+    font-weight: 700;
+    background-color: white;
+    color: #F76C5E;
+    border-radius: 20px;
+    padding: 15px 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.margin-15 {
+    margin: 15px;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;}
+
+.input button {
+    width: 20%;
+    background-color: white;
+    color: #F68E5F;
+    border: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#given-word-input {
+    height: 30px;
+    width: 78%;
+    border-radius: 10px;
+    border: 0;
+}
+
+.choice {
+    margin: 20px 0 ;
+}
+
+#last {
+    font-size: 22px;
+}
+
+.score {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.score > button {
+    height: 30px;
+    width: 50%;
+    background-color: white;
+    color: #F68E5F;
+    border: 0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F68E5F;
+    color: white;
+    height: 80px;
+    width: 100%;
+    font-weight: bold;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+}
+
+.popupBackground {
+    display: none;
+}
