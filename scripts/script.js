@@ -13,27 +13,49 @@ function runGame () {
     let score = 0
     let i = 0
     let numberOfWords = 0
-    let givenWord  = document.querySelector("#given-word")
+    let choiceList = APP_WORDS
     let validateWord = document.querySelector(".input button")
     let userText = document.querySelector("#given-word-input")
+    let wordChoice = document.querySelectorAll(".choice input")
 
     validateWord.addEventListener("click", () => {
         console.log(`jai cliqué et écrit ${userText.value}`)
-        if (APP_WORDS[i] === userText.value) {
+        if (choiceList[i] === userText.value) {
             score++
         }
         i++
-        console.log(APP_WORDS[i])
-        newWord (APP_WORDS[i])
+        console.log(choiceList[i])
+        newWord (choiceList[i])
         userText.value= ""
         numberOfWords++
         returnScoreMessage (score, numberOfWords)
-        if (APP_WORDS[i] === undefined) {
+        if (choiceList[i] === undefined) {
         newWord("Le jeu est fini")
         validateWord.setAttribute("disabled", true)
         } else  {
-            newWord (APP_WORDS[i])
+            newWord (choiceList[i])
         }
         })
     returnScoreMessage (score, numberOfWords)
+
+
+        for (let index = 0; index < wordChoice.length; index++) {
+            wordChoice[index].addEventListener("change", (event) => {
+                console.log(event.target.value)
+                if (event.target.value === "1") {
+                    choiceList = APP_WORDS
+                } else {
+                    choiceList = APP_SENTENCES
+                }
+                newWord(choiceList[i])
+    })
+}
+}
+
+function share() {
+    let shareButton = document.querySelector("form")
+    shareButton.addEventListener("submit", (event) => {
+        event.preventDefault()
+        console.log("pas de rechargement")
+    })
 }
