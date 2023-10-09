@@ -1,38 +1,39 @@
 function returnScoreMessage(score,numberOfWords) {
-    let message = 'Votre score est de ' + score + ' sur ' + numberOfWords
-    console.log(message)
+    let scoreMessage = document.querySelector(".score span")
+    let message = `${score} / ${numberOfWords}`
+    scoreMessage.innerText = message
 }
 
-function chooseWordorSentence() {
-    let choice = prompt("Veuillez choisir la liste : mots ou phrases")
-
-    while (choice !== "mots" && choice !== "phrases") {
-        choice = prompt("Veuillez saisir 'mots' ou 'phrases'")
-    }
-    return choice
+function newWord (userWord) {
+    let givenWord = document.querySelector("#given-word")
+    givenWord.innerText = userWord
 }
-
-function runGameLoop(LIST) {
-    let score = 0
-        for (let i = 0; i < LIST.length; i++) {
-            let userWord = prompt("Entrez le mot :" + LIST[i])
-            if (userWord === LIST[i]) {
-                score += 1
-            }
-        }
-        return score
-    }
 
 function runGame () {
-    let choice = chooseWordorSentence()
     let score = 0
+    let i = 0
     let numberOfWords = 0
-    if (choice === "mots") {
-        score = runGameLoop(APP_WORDS)
-        numberOfWords = APP_WORDS.length
-    } else {
-        score = runGameLoop(APP_SENTENCES)
-        numberOfWords = APP_SENTENCES.length
-    }
+    let givenWord  = document.querySelector("#given-word")
+    let validateWord = document.querySelector(".input button")
+    let userText = document.querySelector("#given-word-input")
+
+    validateWord.addEventListener("click", () => {
+        console.log(`jai cliqué et écrit ${userText.value}`)
+        if (APP_WORDS[i] === userText.value) {
+            score++
+        }
+        i++
+        console.log(APP_WORDS[i])
+        newWord (APP_WORDS[i])
+        userText.value= ""
+        numberOfWords++
+        returnScoreMessage (score, numberOfWords)
+        if (APP_WORDS[i] === undefined) {
+        newWord("Le jeu est fini")
+        validateWord.setAttribute("disabled", true)
+        } else  {
+            newWord (APP_WORDS[i])
+        }
+        })
     returnScoreMessage (score, numberOfWords)
 }
