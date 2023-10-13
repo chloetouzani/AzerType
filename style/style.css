@@ -33,6 +33,12 @@ h2 {
     font-size: 30px;
 }
 
+button:hover {
+    color: var(--color-primary);
+    background-color: var(--color-tertiary);
+    cursor: pointer;
+}
+
 main {
     text-align: center;
     display: flex;
@@ -184,4 +190,8 @@ footer {
     font-weight: bold;
     padding: 7px;
     margin-top: 10px;
+}
+
+.active {
+    display: flex !important;
 }
